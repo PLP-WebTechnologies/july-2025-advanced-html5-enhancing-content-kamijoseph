@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, main, footer {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #666;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        form {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 6px 0 4px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: auto;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Enhanced HTML5 Page with Form</h1>
+    <p>This page demonstrates lists, tables, embedded media, and a fully accessible HTML5 form with native validation.</p>
+</header>
+
+<main>
+
+    <!-- Section: Lists -->
+    <section>
+        <h2>Our Services</h2>
+        <ul>
+            <li>Web Development
+                <ul>
+                    <li>Frontend (HTML, CSS, JavaScript)</li>
+                    <li>Backend (Node.js, Django, Flask)</li>
+                </ul>
+            </li>
+            <li>Data Analysis
+                <ul>
+                    <li>Python Data Processing</li>
+                    <li>Machine Learning Models</li>
+                </ul>
+            </li>
+            <li>UI/UX Design</li>
+        </ul>
+    </section>
+
+    <!-- Section: Table -->
+    <section>
+        <h2>Price List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Package</th>
+                    <th>Price (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web Development</td>
+                    <td>Basic</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Data Analysis</td>
+                    <td>Advanced</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>UI/UX Design</td>
+                    <td>Premium</td>
+                    <td>1200</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Section: Media -->
+    <section>
+        <h2>Media Showcase</h2>
+        <figure>
+            <img src="https://via.placeholder.com/600x300" alt="Sample Project" style="max-width:100%;">
+            <figcaption>A sample project image.</figcaption>
+        </figure>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <video controls width="600">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Section: Form -->
+    <section>
+        <h2>Contact Form</h2>
+        <form action="#" method="post" autocomplete="on">
+            
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required>
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" placeholder="Doe" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </fieldset>
+
+            <!-- Preferences -->
+            <fieldset>
+                <legend>Preferences</legend>
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="">--Select--</option>
+                    <option value="webdev">Web Development</option>
+                    <option value="data">Data Analysis</option>
+                    <option value="design">UI/UX Design</option>
+                </select>
+
+                <label>Preferred Contact Method:</label>
+                <input type="radio" id="contact_email" name="contact_method" value="email" required>
+                <label for="contact_email">Email</label>
+                <input type="radio" id="contact_phone" name="contact_method" value="phone">
+                <label for="contact_phone">Phone</label>
+
+                <label for="newsletter">Subscribe to Newsletter:</label>
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+            </fieldset>
+
+            <!-- Message -->
+            <fieldset>
+                <legend>Message</legend>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" minlength="5" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." minlength="10" required></textarea>
+
+                <label for="refcode">Referral Code (readonly):</label>
+                <input type="text" id="refcode" name="refcode" value="PROMO2025" readonly>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</main>
+
+</body>
+</html>
